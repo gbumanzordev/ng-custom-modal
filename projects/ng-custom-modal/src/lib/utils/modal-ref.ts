@@ -3,9 +3,11 @@ import { Observable, Subject } from 'rxjs';
 export class ModalRef {
   private readonly afterClosed$ = new Subject<unknown>();
 
-  afterClosed: Observable<any> = this.afterClosed$.asObservable();
+  get afterClosed(): Observable<unknown> {
+    return this.afterClosed$.asObservable();
+  }
 
-  close(result?: unknown): void {
+  close<T>(result?: T): void {
     this.afterClosed$.next(result);
   }
 }
