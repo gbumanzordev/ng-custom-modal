@@ -1,6 +1,6 @@
 {
   "name": "@gbumanzordev/ng-custom-modal",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Angular Material's dialog like modal library",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/gbumanzordev"
@@ -21,5 +21,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gbumanzordev/ng-custom-modal"
-  }
+  },
+  "keywords": [
+    "angular 10",
+    "angular dialog",
+    "angular modal",
+    "modal",
+    "dialog",
+    "matdialog"
+  ]
 }
