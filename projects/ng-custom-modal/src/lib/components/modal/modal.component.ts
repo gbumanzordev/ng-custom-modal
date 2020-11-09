@@ -30,7 +30,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private changeDetectorRef: ChangeDetectorRef,
-    private dialogRef: ModalRef
+    private modalRef: ModalRef
   ) {}
 
   setChildComponentType<T>(componentType: Type<T>): void {
@@ -44,7 +44,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
 
   onOverlayClicked(event: MouseEvent): void {
     event.stopPropagation();
-    this.dialogRef.close();
+    this.modalRef.close();
   }
 
   loadChildComponent(componentType: Type<unknown>): void {

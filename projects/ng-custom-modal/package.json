@@ -1,10 +1,7 @@
 {
-  "name": "@gbumanzordev/ng-custom-modal",
-  "version": "1.0.3",
+  "name": "ng-custom-modal",
+  "version": "1.0.4",
   "description": "Angular Material's dialog like modal library",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/gbumanzordev"
-  },
   "author": {
     "name": "Gerson Umanzor",
     "email": "gbumanzor.dev@gmail.com",
