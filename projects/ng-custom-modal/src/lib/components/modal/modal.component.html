@@ -1,0 +1,12 @@
+<div class="overlay" (click)="onOverlayClicked($event)">
+  <div
+    class="dialog"
+    [ngStyle]="{
+      width: width,
+      height: height
+    }"
+    (click)="onModalClick($event)"
+  >
+    <ng-container libModalInsertion></ng-container>
+  </div>
+</div>

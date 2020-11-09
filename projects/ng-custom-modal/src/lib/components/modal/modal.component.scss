@@ -1,0 +1,32 @@
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn ease 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 24px;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
