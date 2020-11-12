@@ -38,6 +38,11 @@ export class ModalService {
       this.dialogComponentRef.instance.height = config.height;
     }
 
+    if (config.disableBackdropClose) {
+      this.dialogComponentRef.instance.disableBackdropClose =
+        config.disableBackdropClose;
+    }
+
     return dialogRef;
   }
 
@@ -45,7 +50,9 @@ export class ModalService {
     this.removeDialogComponentFromBody();
   }
 
-  private appendDialogComponentToBody<T>(config: ModalConfig<T>): ModalRef {
+  private appendDialogComponentToBody<T = unknown>(
+    config?: ModalConfig<T>
+  ): ModalRef {
     const map = new WeakMap();
     map.set(ModalConfig, config);
 
