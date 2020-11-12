@@ -4,7 +4,7 @@ This library has been built to help you with the modals creation in your angular
 
 The usage is very similar to the one you can find in [Angular Material's Dialog](https://material.angular.io/components/dialog/overview).
 
-### How to use
+## How to use
 
 In order to use this library, all you need to do is import NgCustomModal module into your application's module, like this:
 
@@ -41,20 +41,23 @@ openModal() {
 }
 ```
 
-**Generic parameters**:
+### Generic parameters:
+
 You can pass both `ComponentType` and `AdditionalDataType` to your open method, this will automatically provide a type for the first parameter and also the `AdditionalDataType` for the `data` property in the `configObject`.
 
 The configObject should look like this:
 
-```json
-{
-  "data": AdditionalDataType,
-  "width": string,
-  "height": string
+```javascript
+export class ModalConfig<DataType = unknown> {
+  data?: DataType;
+  width?: string;
+  height?: string;
+  disableBackdropClose?: boolean;
 }
+
 ```
 
-Width and height are not required properties and you can skip them, if you do so, the modal will be 50% width and 50% height.
+None of the properties are required and you can skip them, if you do so, the modal will be 50% width and 50% height and the default value for the disableBackdropClose property will be false, this means that when I click the modal's backdrop I will be able to close the modal, if I change it to true, then I would be unable to close the modal by clicking the backdrop.
 
 After you've setup your `openModal` method all you need to do is go to the component that will be loaded inside the modal and accept some configurations.
 
@@ -88,7 +91,8 @@ In order to close the modal you only need to call `this.modal.close()` and it sh
 
 If you need any data to the parent component, you can optionally add any value to the close method.
 
-**Do actions on modal close:**
+### Do actions on modal close:
+
 I can also store the recently opened modal in a variable and then subscribe to `afterClosed`, thus, I will be able to trigger an action when the modal is closed. Here's an example:
 
 ```javascript
