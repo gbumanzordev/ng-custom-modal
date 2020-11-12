@@ -22,6 +22,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   componentRef: ComponentRef<unknown>;
   width = '50%';
   height = '50%';
+  disableBackdropClose = false;
   private readonly onClose$ = new Subject<unknown>();
   public onClose = this.onClose$.asObservable();
 
@@ -30,7 +31,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private changeDetectorRef: ChangeDetectorRef,
-    private dialogRef: ModalRef
+    private modalRef: ModalRef
   ) {}
 
   setChildComponentType<T>(componentType: Type<T>): void {
@@ -43,8 +44,10 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   }
 
   onOverlayClicked(event: MouseEvent): void {
-    event.stopPropagation();
-    this.dialogRef.close();
+    if (!this.disableBackdropClose) {
+      event.stopPropagation();
+      this.modalRef.close();
+    }
   }
 
   loadChildComponent(componentType: Type<unknown>): void {
