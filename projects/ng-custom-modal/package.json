@@ -1,6 +1,6 @@
 {
   "name": "ng-custom-modal",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Angular Material's dialog like modal library",
   "author": {
     "name": "Gerson Umanzor",
